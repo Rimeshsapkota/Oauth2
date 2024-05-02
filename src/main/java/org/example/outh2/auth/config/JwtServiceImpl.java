@@ -60,7 +60,6 @@ public class JwtServiceImpl implements JwtService {
 
 
   public String refreshToken(UserDetails userDetails) {
-    CustomUserDetails user = (CustomUserDetails) userDetails;
     return Jwts.builder()
             .setSubject(userDetails.getUsername())
             .claim("type", "refreshtoken")

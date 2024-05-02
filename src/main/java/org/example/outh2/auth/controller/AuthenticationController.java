@@ -25,11 +25,6 @@ public class AuthenticationController {
     return authenticationService.signup(request);
   }
 
-  @PostMapping(ApiURL.ADMIN_SIGN_UP)
-  public ApiResponse AdminSignup(@RequestBody @Validated SignUpRequest request) {
-    return authenticationService.signup(request);
-  }
-
   @PostMapping(value = ApiURL.USER_SIGN_IN, produces = MediaType.APPLICATION_JSON_VALUE)
   public JwtResponse signin(@RequestBody SigninRequest request) {
     return authenticationService.signin(request);

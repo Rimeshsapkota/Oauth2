@@ -20,7 +20,7 @@ public class CommonConfiguration {
   @Bean
   public ApiResponse getStatus() {
     return ApiResponse.builder()
-            .message("Exception occured in bug reporting system")
+            .message("Exception occured in system")
             .build();
   }
 
