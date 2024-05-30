@@ -5,6 +5,7 @@ import org.example.outh2.auth.entity.Book;
 import org.example.outh2.auth.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
+import javax.management.Query;
 import java.util.List;
 
 @Service
@@ -23,4 +24,19 @@ public class BookServiceImpl {
     return bookRepository.findAll();
   }
 
+  public Book getBook(Integer bookId) {
+    Book book = bookRepository.findById(bookId).orElse(null);
+    if (book != null) {
+      return book;
+    }
+    return new Book();
+  }
+
+  public String sum() {
+    return "sfsdf";
+  }
+
+  public String divide() {
+    return "divide";
+  }
 }
