@@ -8,8 +8,10 @@ import org.example.outh2.auth.config.UserDetailService;
 import org.example.outh2.auth.dto.ChangePasswordDto;
 import org.example.outh2.auth.dto.SignUpRequest;
 import org.example.outh2.auth.dto.SigninRequest;
+import org.example.outh2.auth.entity.Book;
 import org.example.outh2.auth.entity.Role;
 import org.example.outh2.auth.entity.User;
+import org.example.outh2.auth.repository.BookRepository;
 import org.example.outh2.auth.repository.UserRepository;
 import org.example.outh2.exception.InvalidUserCredentialException;
 import org.example.outh2.exception.UserAlreadyExistException;
@@ -36,6 +38,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
   private final PasswordEncoder passwordEncoders;
   private final JwtService jwtService;
   private final UserDetailService userService;
+  private final BookRepository bookRepository;
 
   /**
    * Registers a new user with the provided details.
@@ -72,6 +75,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     List<String> stringList = jwtService.generateToken(userDetails);
     return new JwtResponse(stringList.get(0), stringList.get(1), ResponseMessageConstant.SUCCESSFULLY_LOGIN);
   }
+
 
 
 }
