@@ -5,6 +5,7 @@ import org.example.outh2.auth.entity.Book;
 import org.example.outh2.auth.repository.BookRepository;
 import org.springframework.stereotype.Service;
 
+import javax.management.Query;
 import java.util.List;
 
 @Service
@@ -19,5 +20,4 @@ public class BookServiceImpl {
   public List<Book> getAllBook() {
     return bookRepository.findAll();
   }
-
 }
