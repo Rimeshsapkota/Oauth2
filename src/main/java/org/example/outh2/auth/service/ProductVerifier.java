@@ -1,8 +1,10 @@
 package org.example.outh2.auth.service;
 
+import org.springframework.stereotype.Service;
+
 import java.util.HashSet;
 import java.util.Set;
-
+@Service
 public class ProductVerifier {
   private final Set<String> competitorStock;
 
@@ -14,5 +16,9 @@ public class ProductVerifier {
   }
   public boolean isCurrentlyInStockOfCompetitor(String productName) {
     return competitorStock.contains(productName);
+  }
+  public int add(int a, int b) {
+
+    return a + b;
   }
 }
